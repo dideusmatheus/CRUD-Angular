@@ -1,4 +1,6 @@
-# CRUDAngular
+# CRUD Angular com Material UI
+
+Projeto pessoal desenvolvivo para treinar e aperfeiçoar os conhecimentos sobre CRUD e a utilização do Material UI para os seus componentes.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 
