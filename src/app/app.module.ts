@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -12,12 +13,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { DialogComponent } from './components/toolbar/dialog/dialog/dialog.component';
 import { ToolbarComponent } from './components/toolbar/toolbar/toolbar.component';
-
+import { MatNativeDateModule } from '@angular/material/core'
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    DialogComponent
+    DialogComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar/toolbar.component
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
