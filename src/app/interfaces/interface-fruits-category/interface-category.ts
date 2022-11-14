@@ -1,4 +1,4 @@
-export interface InterfaceCategory {
+export interface InterfaceProduct {
   name: string,
   value: string
 }

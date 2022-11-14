@@ -16,7 +16,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Product Caterogy</mat-label>
       <mat-select>
-        <mat-option *ngFor="let category of categorys" [value]="category.value">
+        <mat-option *ngFor="let category of categoryList" [value]="category.value">
           {{ category.name }}
         </mat-option>
       </mat-select>
@@ -33,12 +33,47 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
+
+
 </div>
 
 <div mat-dialog-content class="productFreshness">
   <h1 mat-dialog-title>Product Freshness</h1>
 
+  <!-- input radio product freshness -->
+  <div class="productFreshnessRadio">
+    <mat-radio-group class="example-radio-group">
+      <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList" value="fresh.value">{{fresh.name}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
 
+  <!-- price -->
+  <div class="productPrice">
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <input type="number" matInput placeholder="price">
+    </mat-form-field>
+  </div>
 
+  <!-- comments -->
+  <div class="productComments">
+    <mat-form-field appearance="outline">
+      <mat-label>Comments</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+</div>
 
+<div mat-dialog-content class="productFreshness">
+
+  <div class="">
+    <div class="row buttons">
+      <div class="col-6">
+        <button mat-raised-button mat-dialog-close class="button-close">Close</button>
+      </div>
+      <div class="col-6">
+        <button mat-raised-button color="accent">Save</button>
+      </div>
+    </div>
+  </div>
 </div>

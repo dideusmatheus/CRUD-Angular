@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InterfaceCategory } from 'src/app/interfaces/interface-fruits-category/interface-category';
+import { InterfaceProduct } from 'src/app/interfaces/interface-fruits-category/interface-category';
 
 
 @Component({
@@ -10,16 +10,18 @@ import { InterfaceCategory } from 'src/app/interfaces/interface-fruits-category/
 
 export class DialogComponent implements OnInit {
 
-  categorys: InterfaceCategory[] = [];
+  categoryList: InterfaceProduct[] = [];
+  freshnessList: InterfaceProduct[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.buildSelectCaterogy();
+    this.buildSelectCaterogyList();
+    this.buildProductFreshnessList();
   }
 
-  buildSelectCaterogy() {
-    this.categorys = [
+  buildSelectCaterogyList() {
+    this.categoryList = [
       {
         name: 'Fruits',
         value: '0'
@@ -38,6 +40,24 @@ export class DialogComponent implements OnInit {
       },
     ];
   }
+
+  buildProductFreshnessList(){
+    this.freshnessList = [
+      {
+        name: 'Brand New',
+        value: '0',
+      },
+      {
+        name: 'Second Hand',
+        value: '1',
+      },
+      {
+        name: 'Refurbished',
+        value: '2',
+      },
+    ]
+  }
+
 
 
 }

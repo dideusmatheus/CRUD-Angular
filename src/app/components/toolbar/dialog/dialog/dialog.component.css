@@ -1,3 +1,30 @@
 .mat-form-field{
   width: 100%;
 }
+
+.productFreshness{
+  margin-top: 1rem;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button-close{
+  border: red;
+  color: white;
+  background-color: gray;
+}
