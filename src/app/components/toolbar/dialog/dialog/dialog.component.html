@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Add Item</h1>
+
+<div mat-dialog-content class="">
+  <!-- product name -->
+  <mat-form-field appearance="outline">
+    <mat-label>Product name</mat-label>
+    <input matInput placeholder="Item">
+    <mat-icon matSuffix>create</mat-icon>
+    <mat-hint>Item name</mat-hint>
+  </mat-form-field>
+
+  <!-- product category -->
+    <mat-form-field appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let category of categorys" [value]="category.value">
+          {{category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+
+
+</div>
