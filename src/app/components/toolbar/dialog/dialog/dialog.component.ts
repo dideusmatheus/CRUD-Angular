@@ -1,6 +1,8 @@
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InterfaceProduct } from 'src/app/interfaces/interface-fruits-category/interface-category';
+import { MatDialogRef } from '@angular/material/dialog';
+import { ApiService } from './../../../../services/api.service';
 
 
 @Component({
@@ -16,7 +18,7 @@ export class DialogComponent implements OnInit {
 
   formProductData!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService, private dialogRef: MatDialogRef<DialogComponent>) { }
 
   ngOnInit(): void {
     this.buildFormProductData();
@@ -26,14 +28,14 @@ export class DialogComponent implements OnInit {
     this.buildProductFreshnessList();
   }
 
-  buildFormProductData(){
+  buildFormProductData() {
     this.formProductData = this.formBuilder.group({
       productName: ['', Validators.required],
       productCategory: ['', Validators.required],
       productDate: ['', Validators.required],
       productFreshness: ['', Validators.required],
       productPrice: ['', Validators.required],
-      productComments: ['',Validators.required]
+      productComments: ['', Validators.required]
     })
   }
 
@@ -48,7 +50,7 @@ export class DialogComponent implements OnInit {
         value: '1'
       },
       {
-        name: 'Fruits',
+        name: 'Eletronic',
         value: '2'
       },
       {
@@ -58,7 +60,7 @@ export class DialogComponent implements OnInit {
     ];
   }
 
-  buildProductFreshnessList(){
+  buildProductFreshnessList() {
     this.freshnessList = [
       {
         name: 'Brand New',
@@ -75,11 +77,23 @@ export class DialogComponent implements OnInit {
     ]
   }
 
-  addProduct(){
-    if(this.formProductData.invalid){
-      alert('preencha tudo')
+  addProduct() {
+    const date = this.formProductData.value;
+    if (this.formProductData.valid) {
+      this.apiService.postProduct(date).subscribe({
+        next: (response)=>{
+          alert('Product add successfully');
+          this.formProductData.reset();
+          this.dialogRef.close('save');
+        },
+        error: (error)=> {
+          alert('Erro shile adding the product');
+        }
+      })
+      console.log(this.formProductData.value);
+      return;
     }
-    console.log(this.formProductData.value);
+    alert('Invalid form');
 
 
   }

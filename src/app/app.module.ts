@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { DialogComponent } from './components/toolbar/dialog/dialog/dialog.component';
 import { ToolbarComponent } from './components/toolbar/toolbar/toolbar.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar/toolbar.component
     MatNativeDateModule,
     MatRadioModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
