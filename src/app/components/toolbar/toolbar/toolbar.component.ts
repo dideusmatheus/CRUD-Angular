@@ -18,7 +18,9 @@ export class ToolbarComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
-      width: '40%'
+      width: '50%',
+      data: { errorText: '' },
+      panelClass: 'full-with-dialog',
     });
 
     // dialogRef.afterClosed().subscribe(result => {

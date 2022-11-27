@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { InterfaceProduct } from 'src/app/interfaces/interface-fruits-category/interface-category';
 
@@ -13,11 +14,27 @@ export class DialogComponent implements OnInit {
   categoryList: InterfaceProduct[] = [];
   freshnessList: InterfaceProduct[] = [];
 
-  constructor() { }
+  formProductData!: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.buildFormProductData();
+
+
     this.buildSelectCaterogyList();
     this.buildProductFreshnessList();
+  }
+
+  buildFormProductData(){
+    this.formProductData = this.formBuilder.group({
+      productName: ['', Validators.required],
+      productCategory: ['', Validators.required],
+      productDate: ['', Validators.required],
+      productFreshness: ['', Validators.required],
+      productPrice: ['', Validators.required],
+      productComments: ['',Validators.required]
+    })
   }
 
   buildSelectCaterogyList() {
@@ -58,6 +75,13 @@ export class DialogComponent implements OnInit {
     ]
   }
 
+  addProduct(){
+    if(this.formProductData.invalid){
+      alert('preencha tudo')
+    }
+    console.log(this.formProductData.value);
 
+
+  }
 
 }
