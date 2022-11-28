@@ -23,9 +23,9 @@ export class DialogComponent implements OnInit {
   ngOnInit(): void {
     this.buildFormProductData();
 
-
     this.buildSelectCaterogyList();
     this.buildProductFreshnessList();
+
   }
 
   buildFormProductData() {
@@ -79,21 +79,32 @@ export class DialogComponent implements OnInit {
 
   addProduct() {
     const date = this.formProductData.value;
+
+    const date1 = {
+      productCategory: this.formProductData.get('productCategory')?.value,
+      productComments: this.formProductData.get('productComments')?.value,
+      productDate: this.formProductData.get('productDate')?.value,
+      productFreshness: this.formProductData.get('productFreshness')?.value,
+      productName: this.formProductData.get('productName')?.value,
+      productPrice: this.formProductData.get('productPrice')?.value
+    }
+
     if (this.formProductData.valid) {
       this.apiService.postProduct(date).subscribe({
         next: (response)=>{
           alert('Product add successfully');
           this.formProductData.reset();
           this.dialogRef.close('save');
+          window.location.reload();
         },
         error: (error)=> {
           alert('Erro shile adding the product');
         }
       })
-      console.log(this.formProductData.value);
-      return;
+    } else {
+      alert('Invalid form');
+
     }
-    alert('Invalid form');
 
 
   }

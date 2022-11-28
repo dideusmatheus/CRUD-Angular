@@ -1,40 +1,14 @@
 {
   "productList": [
+
     {
-      "productName": "dfgdfg",
-      "productCategory": "1",
-      "productDate": "2022-11-10T03:00:00.000Z",
-      "productFreshness": "fresh.value",
-      "productPrice": 23,
-      "productComments": "23232",
-      "id": 1
-    },
-    {
-      "productName": "sadasd",
-      "productCategory": "2",
-      "productDate": "2022-11-10T03:00:00.000Z",
-      "productFreshness": "fresh.value",
-      "productPrice": 54545,
-      "productComments": "iuhiouhiou",
+      "productName": "oie",
+      "productCategory": "Eletronic",
+      "productDate": "2022-11-11T03:00:00.000Z",
+      "productFreshness": "Second Hand",
+      "productPrice": 31232,
+      "productComments": "23323",
       "id": 2
-    },
-    {
-      "productName": "dfgdfg",
-      "productCategory": "0",
-      "productDate": "2022-11-09T03:00:00.000Z",
-      "productFreshness": "fresh.value",
-      "productPrice": 2323,
-      "productComments": "232323232",
-      "id": 3
-    },
-    {
-      "productName": "dfgdfg",
-      "productCategory": "1",
-      "productDate": "2022-11-12T03:00:00.000Z",
-      "productFreshness": "fresh.value",
-      "productPrice": 213,
-      "productComments": "2313",
-      "id": 4
     }
   ],
   "comments": [
